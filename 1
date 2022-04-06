@@ -1,0 +1,13 @@
+#최대공약수 구하는 프로그램
+
+def gcd(a,b):
+    if a<b:
+        a,b=b,a
+    while b != 0:
+        n = a % b
+        if n == 0:
+            break
+        else:
+            a = b
+            b = n
+    return b
