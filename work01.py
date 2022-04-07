@@ -1,3 +1,5 @@
+##입력한 데이터의 평균, 합계, 최대값, 최소값, 범위, 분산 구하는 프로그램
+
 sum2=0
 data=list(map(int,input("데이터 입력==>").split(" ")))
 avg=sum(data)/len(data)
