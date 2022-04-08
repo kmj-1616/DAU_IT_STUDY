@@ -1,4 +1,4 @@
-##2016677 권미정
+##커피 자판기 프로그램
 coffee=3
 while True:
     money=int(input("돈을 넣어 주세요:"))
