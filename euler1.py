@@ -6,3 +6,4 @@ def euler(n):
         output+=1/factorial(i)
     return output
 print(round(euler(20),4))
+#결과: 2.7183
