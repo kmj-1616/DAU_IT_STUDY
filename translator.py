@@ -1,9 +1,11 @@
+#googletrans, tkinter를 이용해 구글번역기 프로그램 만들기
+
 from googletrans import Translator
 from tkinter import *
 translator = Translator()
 
 def myFunc():
-    d_src = translator.detect(TranslatorEntry.get())
+    d_src = translator.detect(TranslatorEntry.get()) #엔트리에 입력되는 문자의 언어를 감지한다.
     if var.get() == 1 :
         result = translator.translate(TranslatorEntry.get(), src=d_src.lang, dest='ko')
     elif var.get() == 2 :
@@ -25,7 +27,7 @@ def myFunc():
     DetectLabel.grid(column=1, row=6, columnspan=2)
 
 w=Tk()
-w.title("번역기")
+w.title("권미정의 번역기")
 w.geometry("500x250")
 w.resizable(False, False)
 
@@ -34,7 +36,7 @@ TranslatorEntryLabel.grid(column=0, row=0)
 TranslatorEntry=Entry(w, width=50, relief="sunken")
 TranslatorEntry.grid(column=1, row=0, columnspan=2)
 
-var=IntVar()
+var=IntVar() #라디오버튼으로 어떤 언어로 번역할지 선택한다.
 rb1=Radiobutton(w,text="한국어",variable=var,value=1)
 rb2=Radiobutton(w,text="영어",variable=var,value=2)
 rb3=Radiobutton(w,text="중국어(간체)",variable=var,value=3)
@@ -53,7 +55,7 @@ rb6.grid(column=2, row=2)
 rb7.grid(column=2, row=3)
 rb8.grid(column=2, row=4)
 
-ConvertButton = Button(w, text="번역하기", overrelief="solid", command=myFunc)
+ConvertButton = Button(w, text="번역하기", overrelief="solid", command=myFunc) #'번역하기' 버튼을 누르면 번역이 실행되도록 한다.
 ConvertButton.grid(column=1, row=5, columnspan=2)
 
 w.mainloop()
